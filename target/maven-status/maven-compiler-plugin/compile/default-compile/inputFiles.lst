@@ -1,0 +1,15 @@
+/home/aris/movierama-project/src/main/java/com/workable/movierama/config/WebSecurityConfig.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/model/Movie.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/web/MovieRamaController.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/utils/EhCacheUtils.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/MovieRamaApplication.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/SecurityService.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/UserDetailServiceImpl.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/UserService.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/exceptions/UserExistsException.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/UserServiceImpl.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/MovieRamaService.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/SecurityServiceImpl.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/startup/MovieAdder.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/model/User.java
+/home/aris/movierama-project/src/main/java/com/workable/movierama/service/MovieRamaServiceImpl.java

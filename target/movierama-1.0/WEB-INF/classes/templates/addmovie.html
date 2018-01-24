@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MovieRama</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+
+<script>
+function validateForm() {
+    var x = document.forms["myForm"]["title"].value;
+    if (x == "") {
+        alert("Title must not be empty");
+        return false;
+    }
+    var x = document.forms["myForm"]["description"].value;
+    if (x == "") {
+        alert("Description must not be empty");
+        return false;
+    }
+}
+</script>
+
+<h1>MovieRama</h1>
+<h2>Please complete the following form in order to add a new Movie</h2>
+<br/>
+
+<form name="myForm" th:action="@{/addmovie}" onsubmit="return validateForm()" method="post">
+    <div><label> Title: <input type="text" name="title"/> </label></div>
+    <div><label> Description: <input type="text" name="description"/> </label></div>
+    <div><input type="submit" value="Submit"/></div>
+</form>
+</body>
+</html>

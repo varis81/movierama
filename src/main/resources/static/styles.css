@@ -1,0 +1,76 @@
+body {
+    background-color: lightgrey;
+}
+
+.container {
+    display: inline-block;
+}
+
+.boxed {
+   float: left;
+   border: 3px solid black ;
+   width: 70%;
+ }
+
+.description{
+   text-align: left;
+   font-size: initial;
+}
+
+.title{
+   text-align: left;
+   font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.info{
+    text-align: left;
+    font-size: small;
+}
+
+.sentiment{
+    font-size: small;
+    display: inline-block;
+    float: left;
+}
+
+.vote{
+    display: inline-block;
+    float: right;
+    font-size: small;
+    margin-right: 5px;
+}
+
+.button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: small;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#header{
+    font-size: 30px;
+    display: inline-block;
+    float: left;
+}
+
+#links{
+    display: inline-block;
+    float: right;
+    margin-bottom: 40px;
+}
+
+.sort {
+   border: 1px solid black ;
+   border-radius: 5px;
+   width: 100%;
+   text-align: left;
+   background-color: grey;
+   clear: left;
+ }

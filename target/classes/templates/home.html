@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MovieRama</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+
+
+<label id="header" >MovieRama</label>
+<div id="links">
+    <a th:href="@{/addmovie}" class="button">New movie</a> | Welcome back <a th:href="@{/retrievea(user=${username})}"><label th:text="${username}"></label></a> | <a th:href="@{/logout}"><label>Logout</label></a>
+</div>
+
+<div class="sort">
+    Sort by <a th:href="@{/sorta(sortby=like, byuser=${filtered}, user=${retrievedUser})}">Likes</a> | <a th:href="@{/sorta(sortby=hate, byuser=${filtered}, user=${retrievedUser})}">Hates</a> | <a th:href="@{/sorta(sortby=date, byuser=${filtered}, user=${retrievedUser})}">Date</a>
+
+</div>
+
+<div class="container">
+    <table>
+    <th:block th:each="movie : ${moviesToDisplay}">
+        <tr>
+            <th>
+                <div class="boxed">
+                    <h2 th:text="${movie.title}" class="title"></h2>
+                    <div class="info">
+                    Posted by <a th:text="${movie.nameOfTheUser}" th:href="@{/retrievea(user=${movie.nameOfTheUser})}"></a> at <label th:text="${movie.dateOfpPublication}"></label>
+                    </div>
+                    <p th:text="${movie.description}" class="description"></p>
+                    <div class="sentiment">
+                        <div th:if="${movie.numberOfLikes == 0 and movie.numberOfHates == 0 and movie.nameOfTheUser != username}">
+                            <label>Be the first to vote for this movie</label>
+                        </div>
+                        <div th:if="${movie.numberOfLikes != 0 or movie.numberOfHates != 0 or movie.nameOfTheUser == username}">
+                            <label th:text="${movie.numberOfLikes}"></label> Likes | <label th:text="${movie.numberOfHates}"></label> Hates
+                        </div>
+                    </div>
+                    <div class="vote">
+
+                        <div th:if="${movie.nameOfTheUser != username}">
+                            <div th:if="${not #lists.contains(moviesLiked, movie.title) and not #lists.contains(moviesHated, movie.title)}">
+                                <a th:href="@{/vote(v=like, m=${movie.title}, filtered=${filtered}, submitedBy=${movie.nameOfTheUser}, sorted=${sorted})}">Like</a> | <a th:href="@{/vote(v=hate, m=${movie.title}, filtered=${filtered}, submitedBy=${movie.nameOfTheUser}, sorted=${sorted})}">Hate</a>
+                            </div>
+                            <div th:if="${#lists.contains(moviesLiked, movie.title) and not #lists.contains(moviesHated, movie.title)}">
+                                <label>You like this movie</label> | <a th:href="@{/retractvote(v=like, m=${movie.title}, filtered=${filtered}, submitedBy=${movie.nameOfTheUser}, sorted=${sorted})}">Unlike</a>
+                            </div>
+                            <div th:if="${not #lists.contains(moviesLiked, movie.title) and #lists.contains(moviesHated, movie.title)}">
+                                <label>You hate this movie</label> | <a th:href="@{/retractvote(v=hate, m=${movie.title}, filtered=${filtered}, submitedBy=${movie.nameOfTheUser}, sorted=${sorted})}">Unhate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </th>
+
+        </tr>
+    </th:block>
+    </table>
+</div>
+
+</body>
+</html>

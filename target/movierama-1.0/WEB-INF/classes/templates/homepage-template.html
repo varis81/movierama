@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MovieRama</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+
+
+
+<label id="header" >MovieRama</label>
+<div id="links">
+<a th:href="@{/login}">Log in</a> or <a th:href="@{/registration}">Sign up</a>
+</div>
+
+<div class="sort">
+    Sort by <a th:href="@{/sort?sortby=like}">Likes</a> | <a th:href="@{/sort?sortby=hate}">Hates</a> | <a th:href="@{/sort?sortby=date}">Date</a>
+
+</div>
+
+<div class="container">
+    <table>
+    <th:block th:each="movie : ${moviesToDisplay}">
+        <tr>
+            <th>
+                <div class="boxed">
+                    <h2 th:text="${movie.title}" class="title"></h2>
+                    <div class="info">
+                    Posted by <a th:text="${movie.nameOfTheUser}" th:href="@{/retrieve(user=${movie.nameOfTheUser})}"></a> at <label th:text="${movie.dateOfpPublication}"></label>
+                    </div>
+                    <p th:text="${movie.description}" class="description"></p>
+                    <div class="sentiment">
+                        <label th:text="${movie.numberOfLikes}"></label> Likes | <label th:text="${movie.numberOfHates}"></label> Hates
+                    </div>
+                </div>
+            </th>
+
+        </tr>
+    </th:block>
+    </table>
+</div>
+
+
+</body>
+</html>

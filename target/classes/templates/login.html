@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MovieRama</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+
+<label id="header" >MovieRama</label>
+<div id="links">
+    <a th:href="@{/registration}">Sign up</a> | <a th:href="@{/homepage}">Home</a>
+</div>
+<br/>
+<br/>
+<br/>
+<h2>Please provide your username and password</h2>
+
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> UserName : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <input type="hidden" name="${_csrf.parameterName}"  value="${_csrf.token}" />
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+com/workable/movierama/exceptions/UserExistsException.class
+com/workable/movierama/service/SecurityService.class
+com/workable/movierama/service/startup/MovieAdder.class
+com/workable/movierama/service/UserDetailServiceImpl$1.class
+com/workable/movierama/config/WebSecurityConfig.class
+com/workable/movierama/utils/EhCacheUtils.class
+com/workable/movierama/MovieRamaApplication.class
+com/workable/movierama/service/MovieRamaServiceImpl$1.class
+com/workable/movierama/model/User.class
+com/workable/movierama/service/MovieRamaServiceImpl.class
+com/workable/movierama/service/UserServiceImpl.class
+com/workable/movierama/model/Movie.class
+com/workable/movierama/service/MovieRamaService.class
+com/workable/movierama/service/SecurityServiceImpl.class
+com/workable/movierama/web/MovieRamaController.class
+com/workable/movierama/service/UserService.class
+com/workable/movierama/service/UserDetailServiceImpl.class
